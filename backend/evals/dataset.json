@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "about": "A small fixed dataset for checking the deterministic detectors and for comparing prompts or models. Labels are human judgments written before any detector was run. Do not edit to make a score pass.",
+  "sources": [
+    {
+      "id": "onboarding-notes",
+      "type": "notes",
+      "text": "We rewrote our onboarding flow three times in 2025. The first rewrite added a product tour and activation did not move. The second removed the tour and cut signup from six fields to two, and activation rose from 31 percent to 38 percent. The third removed the invite-teammates step that nobody finished, and activation reached 47 percent in two weeks. Support tickets about setup fell by a third.",
+      "quotes": [
+        {"quote": "activation rose from 31 percent to 38 percent", "in_source": true},
+        {"quote": "removed the invite-teammates step that nobody finished", "in_source": true},
+        {"quote": "Support tickets about setup fell by a third", "in_source": true},
+        {"quote": "ACTIVATION REACHED 47 PERCENT IN TWO WEEKS!", "in_source": true, "note": "case and punctuation do not matter"},
+        {"quote": "revenue doubled after the redesign", "in_source": false},
+        {"quote": "activation reached 90 percent", "in_source": false},
+        {"quote": "activation rose from 31 percent to 47 percent in one week", "in_source": false, "note": "near miss: stitches two real numbers into a false claim"},
+        {"quote": "the redesign won an industry award", "in_source": false},
+        {"quote": "tour", "in_source": false, "note": "too short to count as evidence even though the word occurs"}
+      ]
+    },
+    {
+      "id": "pricing-transcript",
+      "type": "transcript",
+      "text": "[00:00:04] So the thing about annual plans is that people commit for a full year.\n[00:00:11] Churn on annual plans was 4 percent, and on monthly plans it was 11 percent.\n[00:00:19] We did not discount more than twenty percent, ever.\n[00:00:26] Honestly the best change was moving the plan toggle above the fold.",
+      "timestamps": 4,
+      "quotes": [
+        {"quote": "Churn on annual plans was 4 percent, and on monthly plans it was 11 percent", "in_source": true},
+        {"quote": "moving the plan toggle above the fold", "in_source": true},
+        {"quote": "Churn on annual plans was 11 percent", "in_source": false},
+        {"quote": "we discounted by fifty percent", "in_source": false}
+      ]
+    }
+  ],
+  "avoid": {
+    "words": ["game-changer", "leverage", "synergy"],
+    "posts": [
+      {"text": "This tool is a game-changer for small teams.", "hits": ["game-changer"]},
+      {"text": "We leverage data. Pure synergy.", "hits": ["leverage", "synergy"]},
+      {"text": "Our game-changing approach leveraged old data.", "hits": [], "note": "different words; whole-word matching only"},
+      {"text": "A plain post with nothing to flag.", "hits": []},
+      {"text": "GAME-CHANGER, they said.", "hits": ["game-changer"], "note": "case does not matter"}
+    ]
+  },
+  "pairs": [
+    {
+      "id": "near-copy",
+      "label": "repeat",
+      "a": "We rewrote our onboarding three times before we asked users a single question. The fix was not a better tour. It was removing the one step nobody finished, and saying so in the very first line of the post.",
+      "b": "We rewrote our onboarding three times before we asked users one question. The fix was not a better tour. It was removing the one step nobody finished, and saying so right in the first line."
+    },
+    {
+      "id": "reordered",
+      "label": "repeat",
+      "a": "Most churn is decided in the first week. Customers who never reach a first result rarely come back. Show the first result as early as you possibly can, and everything else gets easier.",
+      "b": "Show the first result as early as you possibly can, and everything else gets easier. Most churn is decided in the first week. Customers who never reach a first result rarely come back."
+    },
+    {
+      "id": "added-hashtags-and-cta",
+      "label": "repeat",
+      "a": "Annual plans cut our churn from 11 percent to 4 percent because customers commit for a full year and stop re-deciding every month.",
+      "b": "Annual plans cut our churn from 11 percent to 4 percent because customers commit for a full year and stop re-deciding every month. What did annual plans do for you? #SaaS #Pricing"
+    },
+    {
+      "id": "same-topic-new-words",
+      "label": "different",
+      "note": "Same idea, written fresh. A lexical check should not call this a repeat; a semantic check might. Known limit of the v1 detector.",
+      "a": "We rewrote our onboarding three times before we asked users a single question. The fix was not a better tour. It was removing the one step nobody finished, and saying so in the very first line of the post.",
+      "b": "Our signup experience went through three redesigns, yet activation only moved once we deleted the invite screen that people abandoned. Cutting beats adding, every single time."
+    },
+    {
+      "id": "different-topic",
+      "label": "different",
+      "a": "We rewrote our onboarding three times before we asked users a single question. The fix was not a better tour. It was removing the one step nobody finished, and saying so in the very first line of the post.",
+      "b": "Hiring your first engineer is mostly about judgment under ambiguity. Give a paid trial week, watch how they ask questions, and weigh curiosity above any language they already know."
+    },
+    {
+      "id": "shared-boilerplate-only",
+      "label": "different",
+      "note": "Both end with the same short call to action; that alone is not a repeat.",
+      "a": "Pricing pages fail when they hide the plan toggle. Move it above the fold and watch conversions climb. What would you test first?",
+      "b": "Hiring slows down when interviews have no scorecard. Write the rubric before the first call and decisions get faster. What would you test first?"
+    },
+    {
+      "id": "too-short",
+      "label": "different",
+      "note": "Very short texts prove nothing, so they are never flagged.",
+      "a": "Ship it.",
+      "b": "Ship it."
+    }
+  ],
+  "reviewed": [
+    {
+      "id": "strong-specific",
+      "post": {"hook": "Activation went from 31 to 47 percent after we deleted one step.", "body": "We rewrote onboarding three times. The tour changed nothing. Cutting signup to two fields lifted activation to 38 percent. Removing the invite-teammates step that nobody finished took it to 47 percent in two weeks.", "cta": "Which step would you delete from your product?", "hashtags": ["#Onboarding"]},
+      "human": {"hook": 5, "clarity": 5, "specificity": 5, "voice_fit": 4, "cta": 4}
+    },
+    {
+      "id": "good-but-generic-cta",
+      "post": {"hook": "Churn is decided in the first week.", "body": "Customers who never reach a first result rarely come back. Show the first result early and everything downstream gets easier. We saw churn on annual plans fall to 4 percent once people committed.", "cta": "Thoughts?", "hashtags": []},
+      "human": {"hook": 4, "clarity": 4, "specificity": 4, "voice_fit": 3, "cta": 2}
+    },
+    {
+      "id": "vague-motivation",
+      "post": {"hook": "Success is a journey.", "body": "Always believe in yourself and keep working hard. Great things happen to people who never give up. Stay focused and the results will follow.", "cta": "Agree?", "hashtags": ["#Motivation", "#Success"]},
+      "human": {"hook": 1, "clarity": 3, "specificity": 1, "voice_fit": 2, "cta": 2}
+    },
+    {
+      "id": "jargon-heavy",
+      "post": {"hook": "Leveraging synergistic paradigms to unlock value.", "body": "In today's fast-paced landscape, organizations must leverage best-in-class solutions to drive holistic transformation across verticals.", "cta": "", "hashtags": ["#Innovation"]},
+      "human": {"hook": 1, "clarity": 1, "specificity": 1, "voice_fit": 1, "cta": 3}
+    },
+    {
+      "id": "clear-story-no-numbers",
+      "post": {"hook": "Our best pricing change took ten minutes.", "body": "We moved the plan toggle above the fold. Nothing else. People finally saw that annual plans existed, and more of them picked one. We had spent weeks debating discounts when the real problem was visibility.", "cta": "What have you hidden from your own customers?", "hashtags": []},
+      "human": {"hook": 4, "clarity": 5, "specificity": 3, "voice_fit": 4, "cta": 5}
+    },
+    {
+      "id": "decent-rambling",
+      "post": {"hook": "A few thoughts on hiring.", "body": "I have been thinking about hiring lately. There are many things to consider and every company is different. Some people prefer trials and some prefer interviews, and it depends on the role, the team and the stage.", "cta": "How do you hire?", "hashtags": []},
+      "human": {"hook": 2, "clarity": 2, "specificity": 2, "voice_fit": 3, "cta": 3}
+    }
+  ]
+}

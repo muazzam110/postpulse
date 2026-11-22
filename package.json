@@ -1,0 +1,7 @@
+﻿{
+  "name": "linkedin-growth-copilot-checks",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check.mjs"
+  }
+}

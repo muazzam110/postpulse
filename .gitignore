@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Database dumps and local DBs (they hold real user data)
+*.sql
+*.dump
+*.bak
+*.db
+
+# Python (backend)
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Node (frontend)
+node_modules/
+dist/
+
+# Hosting tools
+.vercel/
+
+# Logs, OS, editor
+*.log
+.DS_Store
+.vscode/
+.idea/
