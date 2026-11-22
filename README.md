@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 # LinkedIn Growth Copilot
 
@@ -10,8 +10,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?logo=postgresql&logoColor=white)
 ![Status](https://img.shields.io/badge/status-beta-orange)
 
-<!-- Add after you deploy: **[Live demo](https://YOUR-APP.vercel.app)** · -->
-[Architecture](./docs/ARCHITECTURE.md) · [Deployment guide](./docs/DEPLOYMENT.md)
+<!-- Add after you deploy: **[Live demo](https://YOUR-APP.vercel.app)** Â· -->
+[Architecture](./docs/ARCHITECTURE.md) Â· [Deployment guide](./docs/DEPLOYMENT.md)
 
 </div>
 
@@ -55,7 +55,7 @@ flowchart LR
         KS[("OpenRouter key<br/>memory only")]
         FE --- KS
     end
-    FE -- "/api/* · session cookie<br/>+ key header on AI calls" --> API
+    FE -- "/api/* Â· session cookie<br/>+ key header on AI calls" --> API
     subgraph Server
         API["FastAPI API"]
         WK["Worker<br/>(reminders)"]
@@ -167,7 +167,7 @@ All settings come from environment variables or the repo-root `.env`. See [.env.
 
 | Variable | Notes |
 |---|---|
-| `DATABASE_URL` | `postgresql+psycopg://user:password@host:port/db` |
+| `DATABASE_URL` | `postgresql+psycopg://user:pass@host:port/db` |
 | `FRONTEND_ORIGIN` | The only origin CORS allows |
 | `SESSION_SECRET` | Required in production, 32+ random characters |
 | `ENVIRONMENT` | `production` turns on secure cookies and hides `/docs` |
@@ -205,26 +205,26 @@ Free tiers sleep when idle, have usage limits and carry terms that exclude produ
 
 ```text
 .
-├── backend/
-│   ├── app/
-│   │   ├── api/          # routes: auth, ai, content, knowledge, plans, calendar, brand, health
-│   │   ├── core/         # config, security, error handling
-│   │   ├── db/           # engine and session
-│   │   ├── models/       # SQLAlchemy models
-│   │   ├── schemas/      # Pydantic request and response models
-│   │   ├── services/     # generation, evaluation, retrieval, job queue, OpenRouter client
-│   │   └── worker/       # reminder worker process
-│   ├── migrations/       # Alembic migrations
-│   ├── tests/            # pytest suite
-│   └── evals/            # fixed dataset and evaluation runner
-├── frontend/
-│   └── src/              # pages, components, hooks, API client, tests
-├── docs/
-│   ├── ARCHITECTURE.md
-│   └── DEPLOYMENT.md
-├── .github/workflows/    # scheduled reminder worker
-├── render.yaml           # Render blueprint
-└── .env.example
+â”œâ”€â”€ backend/
+â”‚   â”œâ”€â”€ app/
+â”‚   â”‚   â”œâ”€â”€ api/          # routes: auth, ai, content, knowledge, plans, calendar, brand, health
+â”‚   â”‚   â”œâ”€â”€ core/         # config, security, error handling
+â”‚   â”‚   â”œâ”€â”€ db/           # engine and session
+â”‚   â”‚   â”œâ”€â”€ models/       # SQLAlchemy models
+â”‚   â”‚   â”œâ”€â”€ schemas/      # Pydantic request and response models
+â”‚   â”‚   â”œâ”€â”€ services/     # generation, evaluation, retrieval, job queue, OpenRouter client
+â”‚   â”‚   â””â”€â”€ worker/       # reminder worker process
+â”‚   â”œâ”€â”€ migrations/       # Alembic migrations
+â”‚   â”œâ”€â”€ tests/            # pytest suite
+â”‚   â””â”€â”€ evals/            # fixed dataset and evaluation runner
+â”œâ”€â”€ frontend/
+â”‚   â””â”€â”€ src/              # pages, components, hooks, API client, tests
+â”œâ”€â”€ docs/
+â”‚   â”œâ”€â”€ ARCHITECTURE.md
+â”‚   â””â”€â”€ DEPLOYMENT.md
+â”œâ”€â”€ .github/workflows/    # scheduled reminder worker
+â”œâ”€â”€ render.yaml           # Render blueprint
+â””â”€â”€ .env.example
 ```
 
 ## Status and roadmap
