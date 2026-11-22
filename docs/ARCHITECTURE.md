@@ -94,7 +94,7 @@ This split is why the worker needs no secrets: the only job it runs is a reminde
 
 ## 4. Frontend
 
-**Stack:** React 19, JavaScript (no TypeScript), Vite, Tailwind CSS, react-router. UI components are hand-written in the shadcn style. Visual rules are in [DESIGN.md](../DESIGN.md).
+**Stack:** React 19, JavaScript (no TypeScript), Vite, Tailwind CSS, react-router. UI components are hand-written in the shadcn style.
 
 ```mermaid
 flowchart TB
@@ -434,11 +434,9 @@ flowchart LR
 ```
 linkedin-growth-copilot/
 ├── README.md                 setup and run
-├── DESIGN.md                 UI design system
 ├── .env.example              backend settings (no OpenRouter key by design)
 ├── docs/
-│   ├── ARCHITECTURE.md       this file
-│   └── DEPLOYMENT.md         going live
+│   └── ARCHITECTURE.md       this file
 ├── backend/
 │   ├── app/
 │   │   ├── main.py           app, CORS, router wiring
@@ -477,4 +475,4 @@ Where to start reading, depending on your interest:
 - No drag-to-reschedule on the calendar, and a single draft cannot be regenerated on its own.
 - No LinkedIn API connection, no analytics (the `post_metrics` table is a placeholder), and no auto-posting.
 - Prompt-injection defences reduce risk but cannot eliminate it; model output is checked, not assumed correct.
-- The deployment guide has not been exercised on a live host, and real OpenRouter calls were verified against a scripted stand-in rather than the live service. See [DEPLOYMENT.md](./DEPLOYMENT.md) and the README.
+- Real OpenRouter calls were verified against a scripted stand-in rather than the live service, and the app has not been exercised on a live host.
